@@ -28,12 +28,14 @@ while opMenu != 7:
         print(f"Seu empréstimo de: {peEmprestimo} foi realizado com sucesso. Seu saldo atual é de R$ {saldo}")
     elif opMenu == 5:
         paEmprestimo = float(input("Digite o valor a ser quitado: "))
-        emprestimo = emprestimo - paEmprestimo
-        saldo = saldo - paEmprestimo
-            if paEmprestimo > saldo:
-                print(f"Seu saldo é insuficiente para quitar seu empréstimo!")
-            else:
-        print(f"O valor de R$ {paEmprestimo} foi quitado da sua conta. Seu saldo atual é de R$ {saldo}. E seu empréstimo atual é de R$ {emprestimo}")
+        if paEmprestimo > emprestimo:
+            print("Você não pode quitar uma dívida com um valor maior do que você deve!")
+        elif paEmprestimo > saldo:
+            print(f"Seu saldo de R$ {saldo} é insuficiente para quitar seu empréstimo!")
+        else:
+            emprestimo = emprestimo - paEmprestimo
+            saldo = saldo - paEmprestimo
+            print(f"O valor de R$ {paEmprestimo} foi quitado da sua conta. Seu saldo atual é de R$ {saldo}. E seu empréstimo atual é de R$ {emprestimo}")
     elif opMenu == 6:
         print(f"Seu empréstimo atual é de: R$ {emprestimo}")
     opMenu = int(input("Digite novamente a sua opção: "))
