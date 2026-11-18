@@ -39,3 +39,5 @@ while opMenu != 7:
     elif opMenu == 6:
         print(f"Seu empréstimo atual é de: R$ {emprestimo}")
     opMenu = int(input("Digite novamente a sua opção: "))
+    else opMenu == 7:
+        print("Obrigado por utilizar nosso programa!")
